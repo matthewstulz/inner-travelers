@@ -22,13 +22,57 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li><%= link_to "HOME", root_path %></li>
 				<li><a href="#travels">TRAVELS</a></li>
-				<li><a href="#gallery">GALLERY</a></li>
-				<li><a href="#about">ABOUT</a></li>
+				<li><a href="#know">MEET US</a></li>
+				<li><a href="#story">ABOUT</a></li>
+				<li><a href="#adventures">BLOG</a></li>
 			</ul>
 		</div>
 	</div>
 </section>
 <%= yield %>
 
+<a id="back-to-top" href="#" class="btn btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+
 </body>
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<h2>INNER TRAVELERS</h2>
+				<ul class="social-icon">
+					<li><a href="#" class="fa fa-facebook"></a></li>
+					<li><a href="#" class="fa fa-twitter"></a></li>
+					<li><a href="#" class="fa fa-instagram"></a></li>
+					<li><a href="#" class="fa fa-github"></a></li>
+					<li><a href="#" class="fa fa-tumblr"></a></li>
+				</ul>
+				<h4>Copyright &copy; 2017 Inner Travelers
+			</div>
+		</div>
+	</div>
+</footer>
 </html>
+
+<script>
+$(document).ready(function(){
+     $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+                $('#back-to-top').fadeIn();
+            } else {
+                $('#back-to-top').fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        $('#back-to-top').click(function () {
+            $('#back-to-top').tooltip('hide');
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+        
+        $('#back-to-top').tooltip('show');
+
+});	
+</script>

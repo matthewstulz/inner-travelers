@@ -26,7 +26,7 @@
 <%= link_to 'New Post', new_post_path %>
 
 <!-- Header section -->
-<section id="header" class="parallax-section">
+<section id="header" class="header-section">
 	<div class="container">
 		<div class="row">
 			<!-- Section title -->
@@ -41,57 +41,24 @@
 	</div>
 </section>
 
-<section id="portfolio">
-	<div class="container">
-		<div class="row">
-		<h1> RECENT </h1>
-        <% @posts.each do |post| %>
-          <div class="col-lg-4 col-sm-6 col-xs-12">
-      			<div class="grid">
-          		<figure class="grayscale">
-          		  <h2><%= link_to post.title, post %></h2>
-          		  <%= image_tag(post.post_attachments.first.photo_url) %>
-      				</figure>
-      			</div>
-          </div>
-        <% end %>
-        </div>
-    </div>    
-</section> 
-
-<div class="container">
-	<div class="row">
-		<div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="http://2.bp.blogspot.com/-H6MAoWN-UIE/TuRwLbHRSWI/AAAAAAAABBk/89iiEulVsyg/s400/Free%2BNature%2BPhoto.jpg" /></div>
-        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="http://www.virginia.org/uploadedImages/virginiaorg/Images/OrgImages/H/HamptonConventionVisitorBureau/Grandview_Nature_Preserve.jpg?width=300&height=200&scale=upscalecanvas" /></div>
-        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="http://blog.arborday.org/wp-content/uploads/2013/02/NEC1-300x200.jpg" /></div>
-        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="http://th03.deviantart.net/fs70/200H/f/2010/256/0/9/painting_of_nature_by_dhikagraph-d2ynalq.jpg" /></div>
-    	<div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="http://www.virginia.org/uploadedImages/virginiaorg/Images/OrgImages/H/HamptonConventionVisitorBureau/Grandview_Nature_Preserve.jpg?width=300&height=200&scale=upscalecanvas" /></div>
-        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="http://th03.deviantart.net/fs70/200H/f/2010/256/0/9/painting_of_nature_by_dhikagraph-d2ynalq.jpg" /></div>
-	    <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="http://2.bp.blogspot.com/-H6MAoWN-UIE/TuRwLbHRSWI/AAAAAAAABBk/89iiEulVsyg/s400/Free%2BNature%2BPhoto.jpg" /></div>
-        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="http://blog.arborday.org/wp-content/uploads/2013/02/NEC1-300x200.jpg" /></div>
-    </div>
-</div>
-
-<div class="container">
-  <h2>3-2-1 grid example<p class="lead">3 columns on desktop, 2 columns on tablets, 1 columns on phones</p></h2>
+<!-- Recent travels section -->
+<section id="travels">
+  <h1 class="section-title"> RECENT TRAVELS </h1>
   <div class="row">
-    <div class="col-lg-4 col-sm-6 col-xs-12">
-        <a href="#"><img src="http://placehold.it/800x600" class="thumbnail img-responsive"></a>
-    </div>
-    <div class="col-lg-4 col-sm-6 col-xs-12">
-        <a href="#"><img src="http://placehold.it/800x600" class="thumbnail img-responsive"></a>
-    </div>
-    <div class="col-lg-4 col-sm-6 col-xs-12">
-        <a href="#"><img src="http://placehold.it/800x600" class="thumbnail img-responsive"></a>
-    </div>
-    <div class="col-lg-4 col-sm-6 col-xs-12">
-        <a href="#"><img src="http://placehold.it/800x600" class="thumbnail img-responsive"></a>
-    </div>
-    <div class="col-lg-4 col-sm-6 col-xs-12">
-        <a href="#"><img src="http://placehold.it/800x600" class="thumbnail img-responsive"></a>
-    </div>
-    <div class="col-lg-4 col-sm-6 col-xs-12">
-        <a href="#"><img src="http://placehold.it/800x600" class="thumbnail img-responsive"></a>
-    </div>
+     <% @posts.take(6).each do |post| %>
+      <div class="col-lg-4 col-sm-6 col-xs-12 gallery crop">
+        <h2><%= link_to post.title, post %></h2>
+        <figure class="grayscale">
+          <%= link_to image_tag(post.post_attachments.first.photo_url), post.post_attachments.first.photo_url ,:rel => "lightbox", :title => "my caption"%>
+        </figure>
+      </div>
+    <% end %>
   </div>
-</div>
+</section>
+<hr class="line">
+
+<!-- Getting to know us -->
+<section id="know">
+  <h1 class="section-title"> WHO ARE WE?</h1>
+  
+</section>

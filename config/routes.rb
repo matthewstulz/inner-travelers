@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'posts/blog_index'
+
   resources :post_attachments
   resources :posts
   

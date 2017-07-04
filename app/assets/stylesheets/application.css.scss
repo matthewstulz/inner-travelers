@@ -77,6 +77,10 @@ img {
   padding-bottom: 60px;
 }
 
+.light-top {
+  padding-top: 20px;
+}
+
 /* Typography
 ------------------------------------- */
 h2,h3,h4,h5 {
@@ -162,7 +166,7 @@ hr.line {
  }
 
 .navbar-default .navbar-brand > a:focus {
-    color:#ffa400;
+    color: #ffffff;
 }
 
 .custom-navbar .nav > li > a:focus {
@@ -220,19 +224,23 @@ hr.line {
   text-align: center;
 }
 
+.linkcolor { 
+  color: #525252;
+  text-decoration: none;
+  border: 3px solid transparent;
+  padding: 8px 8px 8px 8px;
+}
+
+a.linkcolor:hover {
+  color: #b35900;
+  text-decoration: none;
+  border-color: #000000;
+}
+
 .gallery figure img {
   width: 100%;
-}
-
-.gallery .crop {
- height: 300px;
- width: 400px;
- overflow: hidden;
-}
-
-.crop img {
- height: auto;
- width: 400px;
+  height: 250px;
+  overflow: hidden;
 }
 
 figure.grayscale {

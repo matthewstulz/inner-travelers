@@ -45,16 +45,16 @@
 <section id="travels">
   <h1 class="section-title"> RECENT TRAVELS </h1>
   <div class="row">
-     <% @posts.take(6).each do |post| %>
-      <div class="col-lg-4 col-sm-6 col-xs-12 gallery crop">
-        <h2><%= link_to post.title, post %></h2>
+     <% @posts.take(3).each do |post| %>
+      <div class="col-lg-4 col-sm-6 col-xs-12 gallery">
         <figure class="grayscale">
           <%= link_to image_tag(post.post_attachments.first.photo_url), post.post_attachments.first.photo_url ,:rel => "lightbox", :title => "my caption"%>
         </figure>
+        <h2><%= link_to post.title, post, class: "linkcolor" %></h2>
       </div>
     <% end %>
   </div>
-  <h2><%#= link_to "Check out more of our adventures", blog_index_path %></h2>
+  <h4 class="light-top"><%= link_to "Check out more of our adventures", posts_blog_index_path, class: "linkcolor" %></h4>
 </section>
 
 <hr class="line">

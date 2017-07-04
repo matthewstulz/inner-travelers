@@ -1,0 +1,13 @@
+<section id="travels">
+  <h1 class="section-title"> OUR TRAVELS </h1>
+  <div class="row">
+     <% @posts.each do |post| %>
+      <div class="col-lg-4 col-sm-6 col-xs-12 gallery crop">
+        <h2><%= link_to post.title, post %></h2>
+        <figure class="grayscale">
+          <%= link_to image_tag(post.post_attachments.first.photo_url), post.post_attachments.first.photo_url ,:rel => "lightbox", :title => "my caption"%>
+        </figure>
+      </div>
+    <% end %>
+  </div>
+</section>

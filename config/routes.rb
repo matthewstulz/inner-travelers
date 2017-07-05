@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'posts/blog_index'
-
+  get '/about', to: 'pages#about'
   resources :post_attachments
   resources :posts
   

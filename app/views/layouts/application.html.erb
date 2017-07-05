@@ -22,13 +22,14 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li><%= link_to "HOME", root_path %></li>
 				<li><a href="#travels">TRAVELS</a></li>
-				<li><a href="#know">MEET US</a></li>
+				<li><%= link_to "MEET US", about_path %></li>
 				<li><a href="#story">ABOUT</a></li>
 				<li><%= link_to "BLOG", posts_blog_index_path %></li>
 			</ul>
 		</div>
 	</div>
 </section>
+
 <%= yield %>
 
 <a id="back-to-top" href="#" class="btn btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
@@ -76,3 +77,4 @@ $(document).ready(function(){
 
 });	
 </script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
